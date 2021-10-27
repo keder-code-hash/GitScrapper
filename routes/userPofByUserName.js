@@ -21,7 +21,7 @@ router.get('/user/:username', function (req, res, next) {
       }).then((resp)=>{
           needle('get', `https://api.github.com/users/${req.params.username}/followers`,{
             headers:{
-                Authorization:"Token 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"
+                Authorization:process.env.AUTH_TOK
             }
           })
           .then(function (response) {
@@ -41,7 +41,7 @@ router.get('/user/:username', function (req, res, next) {
       }).then((resp)=>{
         needle('get', `https://api.github.com/users/${req.params.username}/following`,{
           headers:{
-              Authorization:"Token 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"
+              Authorization:process.env.AUTH_TOK
           }
         })
         .then(function (response) {
