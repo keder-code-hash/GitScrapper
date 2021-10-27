@@ -1,2 +1,2 @@
 # GitScrapper
-Fetch Github data(tweets)
+Fetch Github data(repos)
