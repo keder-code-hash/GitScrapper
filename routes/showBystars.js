@@ -39,12 +39,14 @@ router.get('/repo/:stars',(req,res,next)=>{
                 }
                 for(var i=0;i<resp.body.items.length;i++){
                     repos.push({
-                        
                             name: resp.body.items[i].name,
+                            owner_profile_url:resp.body.items[i].owner.html_url,
+                            repo_url:resp.body.items[i].html_url,
                             creation_date:resp.body.items[i].created_at,
-                            stars: resp.body.items[i].created_at,
+                            stars: resp.body.items[i].stargazers_count,
                             size: resp.body.items[i].size,
                             forks: resp.body.items[i].forks_count,
+                            watches_count:resp.body.items[i].watchers_count,
                             owner_name:resp.body.items[i].owner.login
                             
                     });
